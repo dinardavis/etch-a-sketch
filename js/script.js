@@ -8,3 +8,13 @@ function createGrid() {
 }
 
 createGrid();
+
+function changeSquareColor(e) {
+    e.target.classList.add('color-change');
+}
+
+gridContainer.addEventListener("mouseover",
+changeSquareColor);
+
+
+
