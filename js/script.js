@@ -1,17 +1,17 @@
 const gridContainer = document.querySelector(".grid-container");
 let slider = document.getElementById("slider");
 let output = document.getElementById("slider-value");
-let sliderValue = '';
-output.innerText = `${slider.value} x ${slider.value}`;
+output.innerText = `Grid Size: ${slider.value} x ${slider.value}`;
 
 createGrid();
 
 function createGrid() {
-  gridContainer.innerHTML = '';
+  gridContainer.innerHTML = '';  gridContainer.style.setProperty('grid-template-columns', `repeat(${slider.value}, 1fr)`);
+  gridContainer.style.setProperty('grid-template-rows', `repeat(${slider.value}, 1fr)`);
+
   let totalSquares = slider.value ** 2;
-  let gridSquareSize = (600/slider.value).toFixed(4);
   for (let i = 0; i < totalSquares; i++) {
-    gridContainer.innerHTML += `<div class="grid-squares" style="width: ${gridSquareSize}px; height: ${gridSquareSize}px;"></div>`;
+    gridContainer.innerHTML += `<div class="grid-squares"></div>`;
   }
 }
 
@@ -26,7 +26,7 @@ function changeSquareColor(e) {
 }
 
 slider.addEventListener("input", updateSliderValue);
-slider.addEventListener("mouseup", createGrid);
+slider.addEventListener("input", createGrid);
 
 gridContainer.addEventListener("mouseover",
 changeSquareColor);
