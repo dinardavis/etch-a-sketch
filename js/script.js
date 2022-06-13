@@ -19,10 +19,12 @@ function updateSliderValue() {
   output.innerText = `Grid Size: ${slider.value} x ${slider.value}`;
 }
 
-let gridSquares = document.querySelectorAll(".grid-squares");
+const gridSquares = document.querySelectorAll('.grid-squares');
+const colorPicker = document.querySelector(".color-picker");
 
 function changeSquareColor(e) {
-  e.target.classList.add('color-change');
+  e.target.style.backgroundColor = `${colorPicker.value}`;
+  console.log(colorPicker.value);
 }
 
 slider.addEventListener("input", updateSliderValue);
