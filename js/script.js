@@ -1,4 +1,5 @@
-const gridContainer = document.querySelector(".grid-container");
+const grid = document.querySelector(".grid");
+const gridOverlay = document.querySelector(".grid-overlay");
 let slider = document.getElementById("slider");
 let output = document.getElementById("slider-value");
 output.innerText = `Grid Size: ${slider.value} x ${slider.value}`;
@@ -6,12 +7,12 @@ output.innerText = `Grid Size: ${slider.value} x ${slider.value}`;
 createGrid();
 
 function createGrid() {
-  gridContainer.innerHTML = '';  gridContainer.style.setProperty('grid-template-columns', `repeat(${slider.value}, 1fr)`);
-  gridContainer.style.setProperty('grid-template-rows', `repeat(${slider.value}, 1fr)`);
+  grid.innerHTML = '';  grid.style.setProperty('grid-template-columns', `repeat(${slider.value}, 1fr)`);
+  grid.style.setProperty('grid-template-rows', `repeat(${slider.value}, 1fr)`);
 
   let totalSquares = slider.value ** 2;
   for (let i = 0; i < totalSquares; i++) {
-    gridContainer.innerHTML += `<div class="grid-squares"></div>`;
+    grid.innerHTML += `<div class="grid-squares"></div>`;
   }
 }
 
@@ -24,11 +25,20 @@ const colorPicker = document.querySelector(".color-picker");
 
 function changeSquareColor(e) {
   e.target.style.backgroundColor = `${colorPicker.value}`;
-  console.log(colorPicker.value);
+}
+
+function toggleGridOverlay() {
+  if(gridOverlay.style.visibility === "visible") {
+    gridOverlay.style.visibility = "hidden";
+  } else {
+    gridOverlay.style.visibility = "visible"
+  }
+  console.log('working');
 }
 
 slider.addEventListener("input", updateSliderValue);
 slider.addEventListener("input", createGrid);
 
-gridContainer.addEventListener("mouseover",
-changeSquareColor);
+grid.addEventListener("mouseover", changeSquareColor);
+grid.addEventListener("click", toggleGridOverlay);
+gridOverlay.addEventListener("click", toggleGridOverlay);

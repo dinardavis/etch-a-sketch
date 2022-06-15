@@ -10,11 +10,32 @@
 }
 
 .grid-container {
+  position: relative;
+  border: 8px solid #d3d3d3;
+}
+
+.grid {
   display: grid;
   width: 700px;
   height: 700px;
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: repeat(10, 1fr); 
+  z-index: 0;
+}
+
+.grid-overlay {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  z-index: 1;
+}
+
+.show-overlay {
+  visibility: visible;
+}
+
+.hide-overlay {
+  visibility: hidden;
 }
 
 .grid-squares {
