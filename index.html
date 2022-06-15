@@ -11,17 +11,27 @@
 <body>
   <div class="main-container">
     <div class="controls">
-      <input type="color" class="color-picker" name="color-picker">
-      <label name="color-picker">Pick a Color</label>
+      <div class="color-picker-container">
+        <input type="color" class="color-picker" name="color-picker" value="#d05d30">
+        <label name="color-picker">Pick a Color</label>
+      </div>
+      
+      <p class="choose-text">- Or Choose A -</p>
 
+      <button class="random-color-btn">Random Color</button>
 
       <div class="slider-container">
         <input type="range" min="10" max="70" value="10" class="slider" id="slider">
         <div id="slider-value"></div>
       </div>
+
+      <p class="draw-on-off">Click grid to turn "draw" on/off</p>
     </div>
 
-    <p>Click to turn "draw" on/off</p>
+    
+
+
+
     
     <div class="grid-container">
       <div class="grid-overlay" style="visibility: visible;"></div>
