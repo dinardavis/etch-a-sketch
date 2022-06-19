@@ -1,14 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Fascinate&family=Lato:wght@100;300;400&display=swap');
+
 * {
   box-sizing: border-box;
 }
 
+
+
 .main-container {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 100vh;
+  font-family: 'Lato', sans-serif;
+  text-transform: uppercase;
+}
+
+.main-content {
+  display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Helvetica, sans-serif;
-  text-transform: uppercase;
+}
+
+.header {
+  text-align: center;
+  font-size: 65px;
+  margin-bottom: 20px;
+  color: #656464;
+  font-family: 'Fascinate', cursive;
 }
 
 .grid-container {
@@ -41,7 +59,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin-right: 150px;
+  margin-right: 100px;
   padding: 30px 50px;
   background-color: #ddd;
   color: #656464;
@@ -51,8 +69,7 @@
 .color-picker-container {
   display: flex;
   align-items: center;
-  width: 100%;
-  justify-content: space-evenly
+  justify-content: center;
 }
 
 .color-picker {
@@ -88,7 +105,20 @@
   background-color: #d05d30;
   opacity: 0.9;
   color: #fff;
-  font-family: Helvetica, sans-serif;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin: 20px;
+}
+
+.erase-btn {
+  border: none;
+  padding: 15px 0;
+  border-radius: 15px;
+  background-color: #656464;
+  opacity: 0.9;
+  color: #fff;
+  font-family: 'Lato', sans-serif;
   font-size: 16px;
   text-transform: uppercase;
   margin: 20px;
