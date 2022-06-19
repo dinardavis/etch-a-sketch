@@ -109,6 +109,7 @@
   font-size: 16px;
   text-transform: uppercase;
   margin: 20px;
+  cursor: pointer;
 }
 
 .erase-btn {
@@ -122,6 +123,21 @@
   font-size: 16px;
   text-transform: uppercase;
   margin: 20px;
+  cursor: pointer;
+}
+
+.clear-btn {
+  border: none;
+  padding: 15px 0;
+  border-radius: 15px;
+  background-color: #fff;
+  opacity: 0.9;
+  color: #656464;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin: 20px;
+  cursor: pointer;
 }
 
 .slider-container {

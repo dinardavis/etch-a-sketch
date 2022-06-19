@@ -2,6 +2,7 @@ const grid = document.querySelector(".grid");
 const gridOverlay = document.querySelector(".grid-overlay");
 const randomColorBtn = document.querySelector(".random-color-btn");
 const eraseBtn = document.querySelector(".erase-btn");
+const clearBtn = document.querySelector(".clear-btn");
 const gridSquares = document.querySelectorAll('.grid-squares');
 const colorPicker = document.querySelector(".color-picker");
 let slider = document.getElementById("slider");
@@ -56,15 +57,18 @@ grid.addEventListener("mouseover", (e) => {
   }
 });
 
-randomColorBtn.addEventListener("click", () => {
-  drawTypeSelector = 2;
-})
-eraseBtn.addEventListener("click", () => {
-  drawTypeSelector = 3;
-})
 colorPicker.addEventListener("click", () => {
   drawTypeSelector = 1;
 })
 
+randomColorBtn.addEventListener("click", () => {
+  drawTypeSelector = 2;
+})
+
+eraseBtn.addEventListener("click", () => {
+  drawTypeSelector = 3;
+})
+
+clearBtn.addEventListener("click", createGrid)
 
 
